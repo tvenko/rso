@@ -1,0 +1,18 @@
+kumuluzee:
+  name: hostinganalysis
+  env:
+    name: dev
+  version: 1.0.0
+  server:
+    base-url: http://localhost:8088
+    http:
+      port: 8088
+  cors-filter:
+    servlet:
+      allow-origin: "*"
+  config:
+    etcd:
+      hosts: http://192.168.19.10:2379
+    discovery:
+      etcd:
+        hosts: http://192.168.19.10:2379

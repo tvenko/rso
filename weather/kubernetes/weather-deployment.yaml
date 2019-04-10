@@ -1,0 +1,27 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: weather-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: weather
+    spec:
+      containers:
+      - image: tvenko/weather
+        name: weather
+        env:
+          - name: KUMULUZEE_DISCOVERY_CLUSTER
+            value: bluemix
+          - name: KUMULUZEE_DISCOVERY_ETCD_HOSTS
+            value: http://etcd:2379
+          - name: KUMULUZEE_CONFIG_ETCD_HOSTS
+            value: http://etcd:2379
+          - name: KUMULUZEE_SERVER_BASEURL
+            value: http://169.51.13.134:32696
+        ports:
+        - containerPort: 8084
+          name: server
+          protocol: TCP

@@ -1,0 +1,20 @@
+kumuluzee:
+  name: recommendations
+  env:
+    name: dev
+  version: 1.0.0
+  server:
+    base-url: http://localhost:8085
+    http:
+      port: 8085
+  config:
+    etcd:
+      hosts: http://localhost:2379
+  discovery:
+    etcd:
+      hosts: http://localhost:2379
+      ttl: 20
+      ping-interval: 15
+  cors-filter:
+    servlet:
+      allow-origin: "*"

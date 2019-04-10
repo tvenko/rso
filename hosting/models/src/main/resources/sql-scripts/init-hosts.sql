@@ -1,0 +1,3 @@
+INSERT INTO hosting (id, valid_from, valid_to, description) VALUES (1, TIMESTAMP '2006-01-03 15:36:38', TIMESTAMP '2006-01-04 15:36:38', 'New Year Hosting');
+INSERT INTO hosting (id, valid_from, valid_to, description) VALUES (2, TIMESTAMP '2006-01-12 15:36:38', TIMESTAMP '2006-02-01 15:36:38', 'Hosting Holidays');
+INSERT INTO hosting (id, valid_from, valid_to, description) VALUES (3, TIMESTAMP '2006-01-10 15:36:38', TIMESTAMP '2006-01-03 15:36:38', 'Cosy Apartment');

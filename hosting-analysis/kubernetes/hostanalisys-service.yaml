@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hosting-analisys
+  labels:
+    app: hosting-analisys
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8083
+    protocol: TCP
+    targetPort: 8083
+  selector:
+    app: hosting-analisys

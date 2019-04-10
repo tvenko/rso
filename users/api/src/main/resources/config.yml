@@ -1,0 +1,41 @@
+kumuluzee:
+  name: users
+  env:
+    name: dev
+  version: 1.0.0
+  server:
+    base-url: http://localhost:8081
+    http:
+      port: 8081
+  datasources:
+    - jndi-name: jdbc/UsersDS
+      connection-url: jdbc:postgresql://172.18.0.2:5432/users
+      username: dbuser
+      password: postgres
+      max-pool-size: 20
+  helth:
+    checks:
+      data-source-helth-check:
+        jndi-name: jdbc/UsersDS
+  metrics:
+      web-instrumentation:
+        - name: users-endpoint
+          url-pattern: /v1/users/*
+          registry-name: usersRegistry
+  rest-properties:
+    healthy: true
+  config:
+      etcd:
+        hosts: http://192.168.99.100:2379
+  discovery:
+    etcd:
+      hosts: http://192.168.99.100:2379
+      ttl: 20
+      ping-interval: 15
+  cors-filter:
+      servlet:
+        allow-origin: "*"
+users:
+  test: testniString
+rest-properties:
+  healthy: true

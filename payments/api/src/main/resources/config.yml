@@ -1,0 +1,22 @@
+kumuluzee:
+  name: payments
+  env:
+    name: dev
+  version: 1.0.0
+  server:
+    base-url: http://192.168.19.10:8089
+    http:
+      port: 8089
+  config:
+    etcd:
+      hosts: http://localhost:2379
+  discovery:
+    etcd:
+      hosts: http://localhost:2379
+
+  cors-filter:
+    servlet:
+      allow-origin: "*"
+
+rest-properties:
+  healthy: true
